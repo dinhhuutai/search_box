@@ -1,0 +1,132 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html{
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    font-size: 62.5%;
+    line-height: 1.6rem;
+}
+
+.main{
+    background-image: linear-gradient(90deg, rgba(107, 102, 190, 0.596), rgba(73, 90, 201, 0.482));
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.container-box{
+    margin-top: 120px;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    transition: .5s;
+    z-index: 999;
+}
+
+@keyframes inputSlipDown {
+    from{
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(300%);
+    }
+}
+
+@keyframes inputSlipUp {
+    from{
+        transform: translateY(300%);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+
+.container-box.open{
+    width: 350px;
+    transition: .5s;
+}
+
+.container-box .input{
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-size: 2.2rem;
+}
+
+.container-box.open .input{
+    padding-left: 20px;
+    padding-right: 50px;
+}
+
+.container-box .btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+    background-color: white;
+    color: #333;
+    border-radius: 10px;
+    font-size: 2.2rem;
+    height: 100%;
+    width: 50px;
+    cursor: pointer;
+}
+
+.container-info{
+    position: absolute;
+    margin-top: 200px;
+    background-color: rgba(220, 220, 236, 0.776);
+    padding: 20px 50px;
+    border-radius: 10px;
+    min-width: 650px;
+    text-align: center;
+    transform: translateY(-26%) scale(0);
+    transform-origin: top;
+    opacity: 0;
+    transition: 1s;
+}
+
+.container-info.show{
+    transform: translateY(0) scale(1);
+    transition: 1s;
+    opacity: 1;
+}
+
+.container-info .title{
+    font-size: 2.8rem;
+}
+
+.container-info .contai-help {
+    list-style: none;
+    margin-top: 150px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container-info .help{
+    background-color: white;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.container-info .help i{
+    font-size: 3.2rem;
+}
+
+.container-info .help p{
+    font-size: 1.4rem;
+    margin-top: 10px;
+}
